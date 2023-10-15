@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+<<<<<<< HEAD
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
+=======
+>>>>>>> 3957c9a1b6693768dd993c0bf4bb9766177e13d6
 @RestController // definição de tipo de requisição
 @RequestMapping("/users") // definição de rota
 public class UserController {
@@ -24,9 +27,12 @@ public class UserController {
       if(user != null){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("usuario já existe");
       }
+<<<<<<< HEAD
       var passwordHashred = BCrypt.withDefaults().hashToString(12, userModel.getPassword().toCharArray());
 
       userModel.setPassword(passwordHashred);
+=======
+>>>>>>> 3957c9a1b6693768dd993c0bf4bb9766177e13d6
       
       var userCreated =  this.userRepository.save(userModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(userCreated);
